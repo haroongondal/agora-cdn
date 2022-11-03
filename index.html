@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://download.agora.io/edu-apaas/release/edu_sdk@2.6.1.bundle.js"></script>
+  </head>
+
+  <body>
+    <style>
+      #root {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+    <div id="root"></div>
+    <script type="text/javascript">
+      AgoraEduSDK.config({
+        appId: '8aa2a26f55674c3c90e2ac6910729e8f',
+        region: 'CN'
+      });
+      AgoraEduSDK.launch(document.querySelector('#root'), {
+        userUuid: '80980403',
+        userName: 'student',
+        roomUuid: '1666191288',
+        roleType: 2,
+        roomType: 0,
+        roomName: 'test channel',
+        pretest: true,
+        rtmToken:
+          '0068aa2a26f55674c3c90e2ac6910729e8fIAAPih0WUfjrjeQnEEGu6NR4oHeZSGNZ+yQ9uvQGNmxIVNl1kpoAAAAAEAA3jrKJt6pkYwEA6AO3qmRj',
+        language: 'en',
+        duration: 1800,
+
+        courseWareList: [],
+        listener: (evt, args) => {}
+      })
+        .then(() => {
+          console.log('start launch');
+        })
+        .catch(e => {
+          console.error('fail to launch', e);
+        });
+    </script>
+  </body>
+</html>
